@@ -45,7 +45,7 @@ struct ProductCreationView: View {
             VStack(alignment: .leading) {
                 Text("Code:")
                 HStack {
-                    TextField("Enter the code", text: $product.description)
+                    TextField("Enter the code", text: $product.code)
                     if (!self.isValidCode) {
                         Image(systemName: "exclamationmark.triangle.fill")
                             .foregroundColor(.red)
@@ -72,6 +72,6 @@ struct ProductSavedView: View{
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .previewInterfaceOrientation(.landscapeRight)
+            .previewInterfaceOrientation(.portrait)
     }
 }

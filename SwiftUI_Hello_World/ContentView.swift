@@ -1,21 +1,32 @@
-//
-//  ContentView.swift
-//  SwiftUI_Hello_World
-//
-//  Created by user219835 on 7/9/22.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    //state variables will automactically update the screen
+    //when their values are updated
+    @State private var text: String = "Hello, Rodrigo"
+    @State private var show = true
+    
     var body: some View {
-        Text("Hello, Rodrigo!")
-            .padding()
+        
+        VStack {
+            Text(text)
+                .padding()
+                .foregroundColor(.black)
+            Button("Click me") {
+                text = "Button clicked"
+                show.toggle()
+            }
+            
+            if(show) {
+                Text("Teste")
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewInterfaceOrientation(.portraitUpsideDown)
     }
 }
